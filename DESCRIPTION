@@ -1,0 +1,11 @@
+Package: SNAPGRAZEr
+Title: Estimate SOC using SNAPGRAZE model
+Version: 0.0.0.9000
+Authors@R: 
+    person("Ruan", "de Wet", , "ruan@meatnaturallyafrica.com", role = c("aut", "cre"),
+           comment = c(ORCID = "https://orcid.org/0000-0001-5221-8042"))
+Description: R implementation of the SNAPGRAZE model equations developed by Mark Ritchie to estimate the equilibrium soil organic carbon stocks for a given climate and rangeland management history. 
+License: `use_mit_license()`
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
