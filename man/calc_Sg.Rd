@@ -4,7 +4,7 @@
 \alias{calc_Sg}
 \title{Biomass at the end of grazing episode}
 \usage{
-calc_Sg(Sk, Se, Lg, Ddays, n, d, W = NA, Cg = NA)
+calc_Sg(Sk, Se, Lg, Ddays, n, d, r, W = NA, Cg = NA)
 }
 \arguments{
 \item{Sk}{The steady state of biomass in the absence of grazing for a given location. This should ideally be measured directly using grazing exclosures.}
@@ -18,6 +18,8 @@ calc_Sg(Sk, Se, Lg, Ddays, n, d, W = NA, Cg = NA)
 \item{n}{Number of "pastures" per total area, A.}
 
 \item{d}{Stocking density (head/ha)}
+
+\item{r}{Relative growth rate of grass biomass, which is variable over the growing season given it's density dependence. Can be calculated as tht intercept of a relationship between the measured relative growth rate and biomass at a given time. Default for tropical grasslands is 0.05 and for temperate grasslands is 0.035.}
 
 \item{W}{Average animal body size (kg live weight)}
 

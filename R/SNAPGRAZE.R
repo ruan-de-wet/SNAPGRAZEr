@@ -37,7 +37,7 @@ SNAPGRAZE = function(SAND, RAIN, MAT, FIRE, LIGCELL,
   # Episodic Herbivory Model (EHM)
   Se = calc_SE(Sk, Edays, S0, r)
   Lg = calc_Lg(Ddays, d, n, W, Cg)
-  Sg = calc_Sg(Sk, Se, Lg, Ddays, n, d, W, Cg)
+  Sg = calc_Sg(Sk, Se, Lg, Ddays, n, d, r, W, Cg)
   Sf = calc_Sf(Sk, Sg, r, Fdays)
   Pg = calc_Pg(Se, Sg, Sf, Sk, S0)
   Lo = calc_Lo(Cg, Gdays, d)

@@ -7,11 +7,12 @@
 #' @param Ddays Number of days of grazing episode
 #' @param n Number of "pastures" per total area, A.
 #' @param d Stocking density (head/ha)
+#' @param r Relative growth rate of grass biomass, which is variable over the growing season given it's density dependence. Can be calculated as tht intercept of a relationship between the measured relative growth rate and biomass at a given time. Default for tropical grasslands is 0.05 and for temperate grasslands is 0.035.
 #' @param W Average animal body size (kg live weight)
 #' @param Cg Daily consumption rate (g/animal/day)
 #' @export
 
-calc_Sg = function(Sk, Se, Lg, Ddays, n, d, W = NA, Cg = NA) {
+calc_Sg = function(Sk, Se, Lg, Ddays, n, d, r, W = NA, Cg = NA) {
 
   if(is.numeric(Cg)) {
 
