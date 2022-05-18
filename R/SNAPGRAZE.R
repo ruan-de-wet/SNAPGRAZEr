@@ -23,13 +23,21 @@
 #' @export
 
 SNAPGRAZE = function(SAND, RAIN, MAT, FIRE, LIGCELL,
-                     Sk, S0 = 0.1*Sk, Edays, Ddays, Fdays, Gdays = 153,
+                     Sk = NA, S0 = 0.1*Sk, Edays, Ddays, Fdays, Gdays = NA,
                      d, n, W, Cg = NA, r = 0.05, APCcorrection = FALSE, lowSOC = FALSE, DEPTH = 30) {
+
+  if(is.na(Gdays)){
+    Gdays = 22.99*MAT-0.94*MAT^2+0.073*RAIN
+  }
+
+  if(is.na(Sk)){
+    Sk = (12.04-25.18/(0.0083*(MAT+273.15)+0.72*log(RAIN)))/0.9
+  }
 
   # Episodic Herbivory Model (EHM)
   Se = calc_SE(Sk, Edays, S0, r)
   Lg = calc_Lg(Ddays, d, n, W, Cg)
-  Sg = calc_Sg(Sk, Se, Lg, Ddays, n, W, Cg)
+  Sg = calc_Sg(Sk, Se, Lg, Ddays, n, d, W, Cg)
   Sf = calc_Sf(Sk, Sg, r, Fdays)
   Pg = calc_Pg(Se, Sg, Sf, Sk, S0)
   Lo = calc_Lo(Cg, Gdays, d)
