@@ -25,7 +25,7 @@ calc_Sg = function(Sk, Se, Lg, Ddays, n, d, r, W = NA, Cg = NA) {
   } else {print("You need to either provide Cg (daily consumption) or W (animal body size)")}
 
   g = (d*Cg*n*10^(-4))/Se
-  Sg = (Sk*Se)/(Sk*exp(-(r-g)*Ddays)+Se(1-exp(-(r-g)*Ddays)))-Lg
+  Sg = (Sk*Se)/(Sk*exp(-(r-g)*Ddays)+Se*(1-exp(-(r-g)*Ddays)))-Lg
   return(Sg)
 
 }
