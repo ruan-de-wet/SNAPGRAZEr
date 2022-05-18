@@ -51,13 +51,13 @@ SNAPGRAZE = function(SAND, RAIN, MAT, FIRE, LIGCELL,
   # Productivity
   ANPPt_max = calc_ANPPmax(RAIN, MAT)
   ANPPt_est = calc_ANPPest(Se, Sg, Sf, Sk, S0)
-  BNPPt_est = calc_BNPPest(RAIN, MAT, ANPPest, Sk, S0, APCcorrection, DEPTH)
+  BNPPt_est = calc_BNPPest(RAIN, MAT, ANPP_est, Sk, S0, APCcorrection, DEPTH)
 
   # SOC
   PDSOCt = calc_PDSOCt(BNPPest, Sf, Lo, LIGCELL, FIRE)
   DDSOCt = calc_DDSOCt(LIGCELL, Ddays, Cg, n, d, Lo)
 
-  SOCeq = calc_SOCeq(PDSOCt, DDSOCt, SAND, RAIN, lowSOC)
+  SOCeq = calc_SOCeq(PDSOCt, DDSOCt, SAND, RAIN, Gdays, lowSOC)
 
   return(SOCeq)
 
