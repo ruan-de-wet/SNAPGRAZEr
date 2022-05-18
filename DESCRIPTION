@@ -1,6 +1,6 @@
 Package: SNAPGRAZEr
 Title: Estimate SOC using SNAPGRAZE model
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: 
     person("Ruan", "de Wet", , "ruan@meatnaturallyafrica.com", role = c("aut", "cre"),
            comment = c(ORCID = "https://orcid.org/0000-0001-5221-8042"))
