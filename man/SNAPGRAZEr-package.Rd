@@ -8,6 +8,14 @@
 \description{
 R implementation of the SNAPGRAZE model equations developed by Mark Ritchie to estimate the equilibrium soil organic carbon stocks for a given climate and rangeland management history.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/ruan-de-wet/SNAPGRAZEr}
+  \item Report bugs at \url{https://github.com/ruan-de-wet/SNAPGRAZEr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Ruan de Wet \email{ruan@meatnaturallyafrica.com} (\href{https://orcid.org/0000-0001-5221-8042}{ORCID})
 

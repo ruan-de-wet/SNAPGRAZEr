@@ -4,7 +4,7 @@
 \alias{calc_Sg}
 \title{Biomass at the end of grazing episode}
 \usage{
-calc_Sg(Sk, Se, Lg, Ddays, n, W = NA, Cg = NA)
+calc_Sg(Sk, Se, Lg, Ddays, n, d, W = NA, Cg = NA)
 }
 \arguments{
 \item{Sk}{The steady state of biomass in the absence of grazing for a given location. This should ideally be measured directly using grazing exclosures.}
@@ -16,6 +16,8 @@ calc_Sg(Sk, Se, Lg, Ddays, n, W = NA, Cg = NA)
 \item{Ddays}{Number of days of grazing episode}
 
 \item{n}{Number of "pastures" per total area, A.}
+
+\item{d}{Stocking density (head/ha)}
 
 \item{W}{Average animal body size (kg live weight)}
 
