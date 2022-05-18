@@ -31,7 +31,11 @@ SNAPGRAZE = function(SAND, RAIN, MAT, FIRE, LIGCELL,
   }
 
   if(is.na(Sk)){
-    Sk = (12.04-25.18/(0.0083*(MAT+273.15)+0.72*log(RAIN)))/0.9
+    Sk = calc_ANPPmax(RAIN, MAT)/0.9
+  }
+
+  if(is.na(Cg)) {
+    Cg = 2*(5300+770*log(W))
   }
 
   # Episodic Herbivory Model (EHM)
