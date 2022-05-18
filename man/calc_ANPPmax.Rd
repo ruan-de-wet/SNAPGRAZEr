@@ -4,12 +4,14 @@
 \alias{calc_ANPPmax}
 \title{Maximum Above-ground Net Primary Production}
 \usage{
-calc_ANPPmax(RAIN, MAT)
+calc_ANPPmax(RAIN, MAT, SAND)
 }
 \arguments{
 \item{RAIN}{Long-term Mean Annual Precipitation (mm/year).}
 
 \item{MAT}{Long-term Mean Annual Precipitation (degrees Celsius).}
+
+\item{SAND}{Sand \% in top 30 cm soil}
 }
 \description{
 This function calculates the max ANPP  given mean annual precipitation and temperature.

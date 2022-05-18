@@ -53,7 +53,7 @@ SNAPGRAZE = function(SAND, RAIN, MAT, FIRE, LIGCELL,
   #   } else {print("Stocking density A-O-K!")}
 
   # Productivity
-  ANPPt_max = calc_ANPPmax(RAIN, MAT)
+  ANPPt_max = calc_ANPPmax(RAIN, MAT, SAND)
   ANPPt_est = calc_ANPPest(Se, Sg, Sf, Sk, S0)
   BNPPt_est = calc_BNPPest(RAIN, MAT, ANPPt_est, Sk, S0, APCcorrection, DEPTH)
 
