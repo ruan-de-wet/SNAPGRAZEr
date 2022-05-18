@@ -9,7 +9,7 @@
 
 calc_Sf = function(Sk, Sg, r, Fdays) {
 
-  Sf = (Sk*Sg)/(Sk*exp(-(r*Fdays))+Sg(1-exp(-(r*Fdays))))
+  Sf = (Sk*Sg)/(Sk*exp(-(r*Fdays))+Sg*(1-exp(-(r*Fdays))))
   return(Sf)
 
 }
