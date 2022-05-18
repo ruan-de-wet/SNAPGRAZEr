@@ -7,7 +7,7 @@
 calc_BNPPest(
   RAIN,
   MAT,
-  ANPPest,
+  ANPP_est,
   Sk,
   S0 = 0.1 * Sk,
   APCcorrection = FALSE,
@@ -19,7 +19,7 @@ calc_BNPPest(
 
 \item{MAT}{Long-term Mean Annual Precipitation (degrees Celsius).}
 
-\item{ANPPest}{(equivalent to Pg) Total seasonal grass production for the given grazing management system. Output of calc_ANPPest() or calc_Pg().}
+\item{ANPP_est}{(equivalent to Pg) Total seasonal grass production for the given grazing management system. Output of calc_ANPPest() or calc_Pg().}
 
 \item{Sk}{The steady state of biomass in the absence of grazing for a given location. This should ideally be measured directly using grazing exclosures.}
 
