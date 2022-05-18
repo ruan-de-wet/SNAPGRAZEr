@@ -4,7 +4,7 @@
 \alias{calc_SOCeq}
 \title{Equilibrium SOC}
 \usage{
-calc_SOCeq(PDSOCt, DDSOCt, SAND, RAIN, lowSOC = FALSE)
+calc_SOCeq(PDSOCt, DDSOCt, SAND, RAIN, Gdays, lowSOC = FALSE)
 }
 \arguments{
 \item{PDSOCt}{Output of calc_PDSOCt()}
@@ -14,6 +14,8 @@ calc_SOCeq(PDSOCt, DDSOCt, SAND, RAIN, lowSOC = FALSE)
 \item{SAND}{Sand \% in top 30 cm soil}
 
 \item{RAIN}{MAP for year t (mm/year)}
+
+\item{Gdays}{Total number of days in the growing season. Default = 153 (October to March-ish).}
 
 \item{lowSOC}{Default = FALSE. Different regression equation for respiration rate is applied for low and high SOC to avoid a negative respiration rate (which isn't physically possible). Threshold for what qualifies as "low SOC" is 4,600 gC/m^2 (i.e. 46 t/ha). Low SOC regression equation is applicable for higher SOC, but just with slightly lower R-squared.}
 }
