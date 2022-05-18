@@ -11,7 +11,7 @@
 
 calc_DDSOCt = function(LIGCELL, Ddays, Cg, n, d, Lo) {
 
-  DDSOCt = LIGCELL*0.45*0.3*(Ddays*Cg*n*d+Lo)
+  DDSOCt = LIGCELL*0.45*0.3*(Ddays*Cg*n*d*10^(-4)+Lo)
   return(DDSOCt)
 
 }
