@@ -6,11 +6,12 @@
 #' @param Lg Biomass loss during grazing episode. Output of calc_Lg.
 #' @param Ddays Number of days of grazing episode
 #' @param n Number of "pastures" per total area, A.
+#' @param d Stocking density (head/ha)
 #' @param W Average animal body size (kg live weight)
 #' @param Cg Daily consumption rate (g/animal/day)
 #' @export
 
-calc_Sg = function(Sk, Se, Lg, Ddays, n, W = NA, Cg = NA) {
+calc_Sg = function(Sk, Se, Lg, Ddays, n, d, W = NA, Cg = NA) {
 
   if(is.numeric(Cg)) {
 
