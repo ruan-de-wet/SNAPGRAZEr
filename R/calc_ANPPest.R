@@ -10,11 +10,8 @@
 
 calc_ANPPest = function(Se, Sg, Sf, Sk, S0 = 0.1*Sk) {
 
-  if(Sg < Se) {
-    Pg = (Se-S0) + (Sf-Sg)
-  } else {
-    Pg = (Se-S0) + (Sf-Se)
-  }
+  Pg = (Se-S0) + (Sf-min(Sg, Se))
+
   return(Pg)
 
 }
