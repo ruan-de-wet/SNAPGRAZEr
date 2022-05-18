@@ -54,7 +54,7 @@ SNAPGRAZE = function(SAND, RAIN, MAT, FIRE, LIGCELL,
   BNPPt_est = calc_BNPPest(RAIN, MAT, ANPPt_est, Sk, S0, APCcorrection, DEPTH)
 
   # SOC
-  PDSOCt = calc_PDSOCt(BNPPest, Sf, Lo, LIGCELL, FIRE)
+  PDSOCt = calc_PDSOCt(BNPPt_est, Sf, Lo, LIGCELL, FIRE)
   DDSOCt = calc_DDSOCt(LIGCELL, Ddays, Cg, n, d, Lo)
 
   SOCeq = calc_SOCeq(PDSOCt, DDSOCt, SAND, RAIN, Gdays, lowSOC)

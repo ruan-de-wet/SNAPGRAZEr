@@ -4,10 +4,10 @@
 \alias{calc_PDSOCt}
 \title{Plant-Derived SOC in year t}
 \usage{
-calc_PDSOCt(BNPPest, Sf, Lo, LIGCELL, FIRE)
+calc_PDSOCt(BNPPt_est, Sf, Lo, LIGCELL, FIRE)
 }
 \arguments{
-\item{BNPPest}{Output of calc_BNPPest()}
+\item{BNPPt_est}{Output of calc_BNPPest()}
 
 \item{Sf}{Biomass at the end of the growing season. Output of calc_Sf().}
 
