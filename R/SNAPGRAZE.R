@@ -11,7 +11,7 @@
 #' @param Edays Number of days within the growing season prior to grazing episode
 #' @param Ddays Number of days of grazing episode
 #' @param Fdays Number of days left in the growing season after the grazing episode. Fdays = Gdays - Edays - Ddays
-#' @param Gdays Total number of days in the growing season. Default = 153 (October to March-ish).
+#' @param Gdays Total number of days in the growing season. If Gdays is not specified, then it is estimated based on MAT and RAIN.
 #' @param d Stocking density (head/ha)
 #' @param n Number of "pastures" per total area, A.
 #' @param W Average animal body size (kg live weight)
