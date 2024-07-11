@@ -3,7 +3,6 @@
 #' @description Calculation of the parameter Sg, the biomass at the end of grazing episode, from Ritchie (2020)
 #' @param Sk The steady state of biomass in the absence of grazing for a given location. This should ideally be measured directly using grazing exclosures.
 #' @param Se Biomass at the start of grazing episode. Output of calc_Se.
-#' @param Lg Biomass loss during grazing episode. Output of calc_Lg.
 #' @param Ddays Number of days of grazing episode
 #' @param n Number of "pastures" per total area, A.
 #' @param d Stocking density (head/ha)
@@ -12,7 +11,7 @@
 #' @param Cg Daily consumption rate (g/animal/day)
 #' @export
 
-calc_Sg = function(Sk, Se, Lg, Ddays, n, d, r, W = NA, Cg = NA) {
+calc_Sg = function(Sk, Se, Ddays, n, d, r, W = NA, Cg = NA) {
 
   if(is.numeric(Cg)) {
 
@@ -25,7 +24,7 @@ calc_Sg = function(Sk, Se, Lg, Ddays, n, d, r, W = NA, Cg = NA) {
   } else {print("You need to either provide Cg (daily consumption) or W (animal body size)")}
 
   g = (d*Cg*n*10^(-4))/Se
-  Sg = (Sk*Se)/(Sk*exp(-(r-g)*Ddays)+Se*(1-exp(-(r-g)*Ddays)))-Lg
+  Sg = (Sk*Se)/(Sk*exp(-(r-g)*Ddays)+Se*(1-exp(-(r-g)*Ddays)))
   return(Sg)
 
 }
