@@ -10,7 +10,7 @@
 
 calc_MRESPt = function(RAIN, Gdays, SAND, DMRESP, c2 = 0.00044) {
 
-  WETDAYS = (0.00044*RAIN-0.025)*Gdays
+  WETDAYS = (c2*RAIN-0.025)*Gdays
   MRESPt = WETDAYS*(0.7+0.3*SAND/100)*DMRESP
   return(MRESPt)
 
