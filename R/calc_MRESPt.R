@@ -5,12 +5,12 @@
 #' @param Gdays Total number of days in the growing season.
 #' @param SAND Sand % in top 30 cm soil
 #' @param DMRESP Daily microbial respiration (gC/m2/year)
-#' @param c2 Coefficient 2. Multiplied by RAIN in the calculation of WETDAYS.
+#' @param c1 Coefficient 1 from microbial respiration rate linear equation where lowSOC==FALSE. Default based on re-evaluation of published linear equation.
 #' @export
 
-calc_MRESPt = function(RAIN, Gdays, SAND, DMRESP, c2 = 0.00044) {
+calc_MRESPt = function(RAIN, Gdays, SAND, DMRESP, c1 = 0.000358) {
 
-  WETDAYS = (c2*RAIN-0.025)*Gdays
+  WETDAYS = (c1*RAIN-0.025)*Gdays
   MRESPt = WETDAYS*(0.7+0.3*SAND/100)*DMRESP
   return(MRESPt)
 

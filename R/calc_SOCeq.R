@@ -7,13 +7,12 @@
 #' @param RAIN MAP for year t (mm/year)
 #' @param Gdays Total number of days in the growing season.
 #' @param lowSOC Default = FALSE. Different regression equation for respiration rate is applied for low and high SOC to avoid a negative respiration rate (which isn't physically possible). Threshold for what qualifies as "low SOC" is 4,600 gC/m^2 (i.e. 46 t/ha). Low SOC regression equation is applicable for higher SOC, but just with slightly lower R-squared.
-#' @param c1 Coefficient 1. Multiplied by SOCt in the calculation of DMRESP when lowSOC = TRUE.
-#' @param c2 Coefficient 2. Multiplied by RAIN in the calculation of WETDAYS.
+#' @param c1 Coefficient 1 from microbial respiration rate linear equation where lowSOC==FALSE. Default based on re-evaluation of published linear equation.
 #' @export
 
-calc_SOCeq = function(PDSOCt, DDSOCt, SAND, RAIN, Gdays, lowSOC = FALSE, c1 = 0.000358, c2 = 0.00044) {
+calc_SOCeq = function(PDSOCt, DDSOCt, SAND, RAIN, Gdays, lowSOC = FALSE, c1 = 0.000358) {
 
-  WETDAYS = (c2*RAIN-0.025)*Gdays
+  WETDAYS = (c1*RAIN-0.025)*Gdays
 
   if(lowSOC) {
 
