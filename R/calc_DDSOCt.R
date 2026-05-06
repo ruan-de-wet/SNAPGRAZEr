@@ -7,12 +7,10 @@
 #' @param n Number of "pastures" per total area, A.
 #' @param d Stocking density (head/ha)
 #' @param Lo Loss of biomass during the off season. Output of calc_Lo().
+#' @param ddsoc_c Default = 0.3.
 #' @export
 
-calc_DDSOCt = function(LIGCELL, Ddays, Cg, n, d, Lo) {
-
-  DDSOCt = LIGCELL*0.45*0.3*(Ddays*Cg*n*d*10^(-4)+Lo)
+calc_DDSOCt = function(LIGCELL, Ddays, Cg, n, d, Lo, ddsoc_c = 0.3) {
+  DDSOCt = LIGCELL * 0.45 * ddsoc_c * (Ddays * Cg * n * d * 10^(-4) + Lo)
   return(DDSOCt)
-
 }
-
