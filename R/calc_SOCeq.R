@@ -8,23 +8,31 @@
 #' @param Gdays Total number of days in the growing season.
 #' @param lowSOC Default = FALSE. Different regression equation for respiration rate is applied for low and high SOC to avoid a negative respiration rate (which isn't physically possible). Threshold for what qualifies as "low SOC" is 4,600 gC/m^2 (i.e. 46 t/ha). Low SOC regression equation is applicable for higher SOC, but just with slightly lower R-squared.
 #' @param c1 Coefficient 1 from microbial respiration rate linear equation where lowSOC==FALSE. Default based on re-evaluation of published linear equation.
+#' @param mresp_c Default = 0.3.
 #' @export
 
-calc_SOCeq = function(PDSOCt, DDSOCt, SAND, RAIN, Gdays, lowSOC = FALSE, c1 = 0.000358) {
+calc_SOCeq = function(
+  PDSOCt,
+  DDSOCt,
+  SAND,
+  RAIN,
+  Gdays,
+  lowSOC = FALSE,
+  c1 = 0.000358,
+  mresp_c = 0.3
+) {
+  WETDAYS = (c1 * RAIN - 0.025) * Gdays
 
-  WETDAYS = (c1*RAIN-0.025)*Gdays
-
-  if(lowSOC) {
-
-    SOCeq = ((PDSOCt+DDSOCt)/(WETDAYS*(0.7+0.3*(SAND/100))*exp(-10.872)))^(1/1.296)
-
+  if (lowSOC) {
+    SOCeq = ((PDSOCt + DDSOCt) /
+      (WETDAYS * (0.7 + mresp_c * (SAND / 100)) * exp(-10.872)))^(1 / 1.296)
   } else {
-
-    SOCeq = ((PDSOCt+DDSOCt+0.579*WETDAYS*(0.7+0.3*(SAND/100)))/(c1*WETDAYS*(0.7+0.3*(SAND/100))))+0.579
-
+    SOCeq = ((PDSOCt +
+      DDSOCt +
+      0.579 * WETDAYS * (0.7 + mresp_c * (SAND / 100))) /
+      (c1 * WETDAYS * (0.7 + mresp_c * (SAND / 100)))) +
+      0.579
   }
 
   return(SOCeq)
-
 }
-
